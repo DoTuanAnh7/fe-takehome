@@ -1,0 +1,71 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" package="com.dtanh7.fetakehome">
+
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.VIBRATE" />
+  <uses-permission android:name="android.permission.APP_TRACKING_TRANSPARENCY" />
+
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <!--  This permission is needed for Singular to retrieve Google Play Referrer data  -->
+  <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+  <!--  This permission is needed for Singular to retrieve data from the google licensing API  -->
+  <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
+  <!--  This permission is needed for Singular to access the Google Advertising ID  -->
+  <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+
+  <application android:name=".MainApplication" 
+      android:label="@string/app_name"
+      android:icon="@mipmap/ic_launcher"
+      android:roundIcon="@mipmap/ic_launcher_round" 
+      android:allowBackup="false"  
+      android:theme="@style/AppTheme"
+    >
+    <activity android:name=".MainActivity"
+      android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode" 
+      android:launchMode="singleTask" 
+      android:windowSoftInputMode="adjustResize" 
+      android:screenOrientation="portrait" 
+      android:exported="true"
+    >
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <category android:name="android.intent.category.BROWSABLE" />
+        <data android:scheme="bobbob" />
+      </intent-filter>
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW"/>
+        <category android:name="android.intent.category.DEFAULT"/>
+        <category android:name="android.intent.category.BROWSABLE"/>
+        <data
+          android:host="bobbob.link"
+          android:scheme="https"/>
+        <data
+          android:host="dev.bobbob.link"
+          android:scheme="https"/>
+        <data
+          android:host="staging.bobbob.link"
+          android:scheme="https"/>
+      </intent-filter>
+    </activity>
+    <service android:name=".MainNotificationService" android:exported="true">
+      <intent-filter>
+        <action android:name="com.google.firebase.MESSAGING_EVENT" />
+      </intent-filter>
+    </service>
+    <receiver android:name="com.intercom.reactnative.RNIntercomPushBroadcastReceiver" 
+      tools:replace="android:exported" 
+      android:exported="true" 
+    />
+
+    <!-- <meta-data android:name="com.google.android.gms.ads.AD_MANAGER_APP" android:value="true"/> -->
+    <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="@string/admob_id" />
+    <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id" />
+    <meta-data android:name="com.facebook.sdk.ClientToken" android:value="@string/facebook_client_token" />
+  </application>
+</manifest>

@@ -1,0 +1,385 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0" />
+
+    <script src="https://assets.frankiefinancial.io/onboarding/v4/ff-onboarding-widget.umd.min.js"></script>
+    <style id="smart-ui-styles">
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+
+        #ff-onboarding-widget  {
+            font-family: Poppins !important;
+            font-size: 10px;
+            color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-title {
+            font-family: Poppins !important;
+            color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-subtitle {
+            font-family: Poppins !important;
+            color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-welcome-list-title.ff-hint {
+            font-family: Poppins !important;
+            color: #17174D;
+        }
+
+        #ff-onboarding-widget .ff-welcome-view {
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-welcome-list-title {
+            font-family: Poppins !important;
+            color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-initial-data-view {
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-document-input  {
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-passport-input {
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+
+        #ff-onboarding-widget .ff-medicare-input{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+
+        #ff-onboarding-widget .ff-licence-inputs-container{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-personal-details-form{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-fullname-input{
+            font-family: Poppins !important;
+            color: #3AF1C2 !important;
+            font-size: 11px !important;
+        }
+        #ff-onboarding-widget .ff-dob-input{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-address-input{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-address-autocomplete{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-address-manual-input{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-details-review{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-document-review-input{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-applicant-review-input{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-the-input{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-initial-data-view{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-document-input{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-document-input{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-fullname-input{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-dob-input{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-address-manual-input{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-no-match{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-warning-no-match{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-personal-details-form{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-partial-match{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-warning-partial-match{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-review-document{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-details-review{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-document-form{
+              font-family: Poppins !important;
+              color: #17174D !important;
+              font-size: 12px;
+        }
+        #ff-onboarding-widget  .ff-warning-success{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-failure-view{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-basic-button {
+            background-color: #3AF1C2 !important;
+            border-color: #3AF1C2 !important;
+            font-family: Poppins !important;
+            color: #17174D !important;
+            font-size: 11px !important;
+        }
+       
+
+        #ff-onboarding-widget .ff-icon{
+              font-family: Poppins !important;
+              /* background-color: #3AF1C2 !important; */
+              color: #3AF1C2 !important;
+
+        }
+
+
+        /* #ff-onboarding-widget .ff-basic-button,
+        #ff-onboarding-widget .ff-goahead-button {
+            background-color: #3AF1C2 !important;
+            border-color: #3AF1C2 !important;
+            font-family: Poppins !important;
+            color: #17174D !important;
+            font-size: 10px;
+        }  */
+
+        #ff-onboarding-widget .ff-label{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+
+     
+        #ff-onboarding-widget .ff-main-label{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-hint-label{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-arrow{
+              color: #3AF1C2 !important;
+        }
+        #ff-onboarding-widget .ff-progress{
+               background-color: #3AF1C2 !important;
+            font-size: 10px;
+        }
+        #ff-onboarding-widget .ff-the-tick{
+              font-family: Poppins !important;
+              color: #3AF1C2 !important;
+        }
+        #ff-onboarding-widget .ff-the-tick{
+              font-family: Poppins !important;
+              color: #3AF1C2 !important;
+        }
+        #ff-onboarding-widget .ff-label{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-select-option{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-the-select-box{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-select-option.ff-spread{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-generic-input.ff-label {
+            /* font-family: Poppins !important; */
+            color: #161644 !important;
+            /* background-color: #3AF1C2; */
+        }
+        #ff-onboarding-widget .ff-select-option.ff-spread{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-select-option-filter{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget ul.ff-select-option-options{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget li.ff-select-option-label{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-generic-input{
+              /* font-family: Poppins !important; */
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-label{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-generic-input input:focus{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+        #ff-onboarding-widget .ff-generic-input input{
+              font-family: Poppins !important;
+              color: #17174D !important;
+        }
+
+
+
+
+    
+    </style>
+    <script>
+        // const token = window.localStorage.getItem('token');
+        //  alert(token)
+        // window.localStorage.removeItem("token");
+    
+        // console.log('Backend Response is herrrrrrrrr', global.MyVar)
+        async function initialiseWidget() {
+            //     document.addEventListener("ReactNativeWebView", function(data) {
+            //     var details = JSON.parse(data.data);
+            //     alert(details)
+            //   })
+        //    alert(token)
+            console.log('function working')
+            // import axios from 'axios'
+
+            //    var tokenData;
+            //    var global_data='';
+            const datanew = {
+                "permissions": {
+                    "preset": "smart-ui",
+                    "reference": "reference"
+                }
+            }
+            const tokenized = await fetch(FRANKIE_SMART_UI_API_URL + '/auth/v1/machine-session', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'authorization': `machine {${FRANKIE_AUTHORIZATION}}`
+                },
+                data: datanew,
+            }),
+                tokenObj = tokenized
+            console.log(tokenObj, 'toknized here =====>')
+            const disposition = tokenObj.headers.get('token')
+            console.log(disposition, "Disposition header is herrrrrrrrrrrr")
+
+            // .then(data => {
+            //     return data.json()
+            // }).then(latest => {
+            //     console.log(latest)
+            // })
+
+            console.log(tokenObj, "Token obj is here=======================>>>>>>>")
+            var widgetConfiguration = {
+                frankieBackendUrl: FRANKIE_SMART_UI_API_URL,
+            //     mode: "demo",
+                organisationName: "bobbob",
+                documentTypes: ['PASSPORT', 'DRIVERS_LICENCE'],
+                acceptedCountries:null,
+                idScanVerification: false,
+                // idScanVerification: {
+                //     useLiveness: false,
+                //     useMobile: true,
+                //     welcomeScreen: {
+                //         title: "Great Biometric check",
+                //         content: ["you're one step close to finishing the application process"],
+                //         ctaText: "Start Identity Verification"
+                //     },
+                // },
+
+                successScreen: {
+                    ctaLabel: "Create Account :)",
+                    ctaUrl: 'https://www.google.com/'
+                    
+                },
+                failureScreen: {
+                    ctaUrl: "mailto:info@bobbob.co",
+                    ctaText: 'Contact Us'
+                },
+                checkProfile: 'auto',
+                maxAttemptCount: 5,
+                googleAPIKey: false,
+                acceptedCountries: null,
+                requestAddress: true,
+                consentText:
+                    'I consent to the collection, use and disclosure of my personal information, including income, superannuation, and payroll data, in accordance with <a href="https://www.bobbob.co/privacy-policy">Bobbob Privacy Policy</a>, and consent to my personal information being disclosed to a credit reporting agency or my information being checked with the document issuer or official record holder via third parties in connection with a request to verify my identity. I consent to my personal information being disclosed to your verification agent(s), which will act as my intermediary to access, pursuant to my right under the Australian Privacy Act, my personal information lawfully held by third parties, for the purpose of verifying my identity and for those third parties using my personal information for the purpose of those third parties monitoring and improving their verification services.',
+                injectedCssTagID: "smart-ui-styles",
+            };
+            // const applicantReference = Math.floor(Math.random() * 9999) + "-new-applicant";
+            // console.log("applicantReference", applicantReference);
+
+            window.frankieFinancial.initialiseOnboardingWidget({
+                // applicantReference: "applicantReference",
+                config: widgetConfiguration,
+                width: screen.availWidth - (screen.availWidth / 25),
+                height: screen.availHeight - (screen.availHeight / 10),
+                // generate this token using postman with your frankie credentialseyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im9yZ2FuaXNhdGlvbiI6eyJpZCI6MTUzLCJwYXJlbnRJZCI6bnVsb
+                ffToken: disposition,
+                applicantReference: token,
+               
+
+            });
+        }
+
+    </script>
+</head>
+
+<body responsive onload="initialiseWidget()">
+    <!-- <button onclick="pradumyafinal()">Click me</button> -->
+    <ff-onboarding-widget>
+    </ff-onboarding-widget>
+</body>
+
+</html>

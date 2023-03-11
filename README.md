@@ -1,92 +1,113 @@
-# trading-platform-poc-mobile
+# UTTG web app
+Hệ thông quản lý bệnh nhân UTTG
+
+### Công nghệ
+
+- [ReactJs] xây dựng web app
+- [ExpressJs] xây dựng APIs
+- [CrateDB] cơ sở dữ liệu
+
+### Chạy dự án trên local
+
+- Clone dự án và cài đặt package
 
 
+```sh
+// Bước 1: clone code dự án
+git clone https://vcnttgitlab.ap.ngrok.io/minhdh/uttg_soft.git
+// Bước 2: di chuyển vào thư mục làm việc
+cd uttg_soft
+// Bước 3: cài đặt package thư mục gốc
+npm install
+// Bước 4: cài đặt backend và client package
+npm run install-all
 
-## Getting started
+// Bước 5: chạy ứng dụng
+npm run start
+```
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+- local app: http://localhost:4000
+- local api: http://localhost:4001
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
 
-## Add your files
+Username: admin
+Password: Abcd@1234
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+### Các scripts 
+```sh
+"scripts": {
+    "start": "concurrently \"cd backend && npm run start-dev\" \"cd client && npm run start\"",
+    "start-product": "concurrently \"cd backend && npm run start-dev\" \"cd client && npm run start-https\"",
+    "install-all": "concurrently \"cd backend && npm install\" \"cd client && npm install\"",
+    "format": "concurrently \"cd backend && npm run format\" \"cd client && npm run format\"",
+    "generate": "plop",
+    "docker-compose": "docker-compose up -d"
+},
+// Khởi chạy cả backend và client
+npm run start
+//  Khởi chạy cả backend và client(https)
+npm run start-product
+// cài package cho backend và client
+npm run install-all
+// format code cho backend và client 
+npm run format 
+// generate code component, redux, api (đang phát triển)
+npm run generate
+```
+
+### Các bước làm việc với git
+#### Khi triển khai 1 task
+```
+- Step 1: Checkout sang nhánh main và lấy code mới nhất
+Command: git checkout main
+- Step 2: Lấy code mới nhât từ nhánh main
+Command: git pull origin main
+- Step 3: Tạo ra 1 nhánh mới từ nhánh main. Theo quy tắc: feature/tên_người_lam/tiêu_đề_task
+Ví dụ: feature/hoplb/show-config-data
+Command: git checkout -b feature/hoplb/show-config-data
+- Step 4 Tiến hành viết code cho task của mình
+Step 5: Đẩy code lên nhánh mới vừa rồi
+Format lại toàn bộ code
+Command: npm run format
+Kiểm tra code đã thay đổi gì chưa
+Command: git status
+Lưu toàn bộ code vào local
+Command: git add .
+Ghi nội dung đã làm cho đoạn code đã sửa
+Command: git commit -m"Show config data in admin page"
+Lấy code mới nhất từ nhánh main về
+Command: git pull origin main
+Nếu có conflict tiến hành sửa conflict và chạy  git add, git commit lại
+Đẩy code lên nhánh hiện tại
+Command: git push origin feature/hoplb/show-config-data
+Step 6: Tạo pull request
+Merge code từ nhánh hiện tại vào nhánh main
+```
+#### Một số lệnh git khác hay dùng
+- git stash: Khi đã sửa file và muốn lấy code mới nhất, có 2 cách để làm. Một là git add ., git commit để lưu code đã làm. Hai là dùng git stash để bỏ qua những file đã sửa và lưu tạm thời, rồi git pull để lấy code về. Để lấy code đã sửa trước đó chạy git stash pop.
+- git cherry-pick
+- git reset --hard ID_COMMIT
+- git branch 
+- git log
+### Cấu trúc dự án
+#### Thư mục gốc
+Chứa các script để chạy dự án
+#### Thư mục backend
+- Chứa code backend
+- Link APIs tài liệu: http://localhost:4001/docs
+#### Thư mục client
+- Chứa code client
+
+
+### Quy tắc khi viết code
+```
+Sau đây là một số quy chuẩn đặt tên thường dùng trong dự án:
+- Tên lớp đặt theo PascalCase, ví dụ: UserClass, CategoryClass…
+- Tên hàm và phương thức sử dụng camelCase, ví dụ getUser, getCategory…
+- Tên biến cũng sử dụng camelCase loginUser, categoryList…
+- Tên hằng số thì đặc biệt, viết hoa hết và cách nhau bởi dấu gạch dưới DISCOUNT_PERCENT, LIMIT_RATE…
+- Tên bảng, tên cột trong Database sử dụng underscore và sử dụng danh từ số nhiều, ví dụ bảng oauth_clients, oauth_refresh_tokens.
 
 ```
-cd existing_repo
-git remote add origin https://source.cmcglobal.com.vn/delivery-unit-21/trading-platform/trading-platform-poc-mobile.git
-git branch -M main
-git push -uf origin main
-```
 
-## Integrate with your tools
 
-- [ ] [Set up project integrations](https://source.cmcglobal.com.vn/delivery-unit-21/trading-platform/trading-platform-poc-mobile/-/settings/integrations)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.

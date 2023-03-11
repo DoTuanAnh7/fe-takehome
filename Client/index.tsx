@@ -10,7 +10,7 @@ import {Provider} from 'react-redux';
 import {setupStore} from './app/redux/store';
 import 'react-native-gesture-handler';
 
-export const Root = (): JSX.Element => {
+export const Root = () => {
   return (
     <Provider store={setupStore()}>
       <App />
@@ -18,13 +18,4 @@ export const Root = (): JSX.Element => {
   );
 };
 
-function HeadlessCheck({isHeadless}) {
-  if (isHeadless) {
-    // App has been launched in the background by iOS, ignore
-    return null;
-  }
-
-  return <Root />;
-}
-
-AppRegistry.registerComponent(appName, () => HeadlessCheck);
+AppRegistry.registerComponent('FETakeHome', () => Root);

@@ -37,8 +37,10 @@ const LoginScreen = ({navigation, route}) : JSX.Element => {
   const sheetRef = useRef(null);
 
   const submitLogin = async (username, password) => {
+    console.log(12312312);
+    
     Keyboard.dismiss();
-    navigation.navigate('Dashboard')
+    navigation.navigate('RegisterScreen');
     // const onResponse = async res => {
     //   const {access_token: idToken, refreshToken} = res.data;
     //   const {id: userId} = jwt_decode(idToken);

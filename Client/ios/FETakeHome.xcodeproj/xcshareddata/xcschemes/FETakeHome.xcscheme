@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "FETakeHomeApp"
-               BlueprintName = "FETakeHomeApp"
-               ReferencedContainer = "container:FETakeHomeApp.xcodeproj">
+               BuildableName = "FETakeHome"
+               BlueprintName = "FETakeHome"
+               ReferencedContainer = "container:FETakeHome.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -31,7 +31,7 @@
       </Testables>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Dev"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -40,6 +40,11 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <PathRunnable
+         runnableDebuggingMode = "0"
+         BundleIdentifier = "com.dtanh7.fetakehome"
+         FilePath = "/Users/dtanh7/Library/Developer/Xcode/DerivedData/FETakeHome-fgxaqcvezapwidgpbtvjueggeuaq/Build/Products/Dev-iphonesimulator/FETakeHome-Dev.app">
+      </PathRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -51,14 +56,14 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "FETakeHomeApp"
-            BlueprintName = "FETakeHomeApp"
-            ReferencedContainer = "container:FETakeHomeApp.xcodeproj">
+            BuildableName = "FETakeHome"
+            BlueprintName = "FETakeHome"
+            ReferencedContainer = "container:FETakeHome.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "Debug">
+      buildConfiguration = "Dev">
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"

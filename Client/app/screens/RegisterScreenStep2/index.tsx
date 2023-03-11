@@ -7,6 +7,7 @@ import {
   Dimensions,
   ImageBackground,
   Keyboard,
+  Platform,
   StatusBar,
   Text,
   TouchableOpacity,
@@ -157,12 +158,14 @@ export default function index({navigation}) {
                 placeholder="Type in your email"
                 onChangeText={value => setEmail(value)}
               />
-              <InputPassword
-                value={password}
-                placeholder="Type in your password"
-                onChangeText={value => setPassword(value)}
+               <InputEmail
+                value={email}
+                keyboardType="email-address"
+                autoCapitalize="none"
+                placeholder="Type in your email"
+                onChangeText={value => setEmail(value)}
               />
-                <InputPassword
+              <InputPassword
                 value={password}
                 placeholder="Type in your password"
                 onChangeText={value => setPassword(value)}
@@ -178,7 +181,7 @@ export default function index({navigation}) {
               <TouchableOpacity
                 onPress={Register}
                 style={styles.TouchableButton}>
-                <Text style={styles.RegisterButtonText}>Register</Text>
+                <Text style={styles.RegisterButtonText}>Regist123123123er</Text>
               </TouchableOpacity>
             </View>
             <View

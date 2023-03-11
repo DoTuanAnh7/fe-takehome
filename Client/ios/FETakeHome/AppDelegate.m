@@ -51,7 +51,7 @@ static void InitializeFlipper(UIApplication *application) {
 
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
-                                                   moduleName:@"trading"
+                                                   moduleName:@"FETakeHome"
                                             initialProperties:nil];
 
   [NSThread sleepForTimeInterval:0.0];

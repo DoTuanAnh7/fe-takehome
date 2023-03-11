@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/dtanh7/Desktop/trading-platform-poc-mobile/ios/FETakeHome.xcodeproj">
+      location = "self:/Users/dtanh7/Desktop/FETakeHome/Client/ios/FETakeHome.xcodeproj">
    </FileRef>
 </Workspace>

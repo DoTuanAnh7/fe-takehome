@@ -8,17 +8,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TaskSchema = exports.Task = void 0;
 const mongoose_1 = require("@nestjs/mongoose");
 const class_transformer_1 = require("class-transformer");
-const mongoose_2 = require("mongoose");
 let Task = class Task {
 };
 __decorate([
     (0, class_transformer_1.Transform)(({ value }) => value.toString()),
-    __metadata("design:type", typeof (_a = typeof mongoose_2.ObjectId !== "undefined" && mongoose_2.ObjectId) === "function" ? _a : Object)
+    __metadata("design:type", Object)
 ], Task.prototype, "_id", void 0);
 __decorate([
     (0, mongoose_1.Prop)(),

@@ -1,11 +1,11 @@
-# UTTG web app
-Hệ thông quản lý bệnh nhân UTTG
+# Front End Take Home
+Regov POC application
 
-### Công nghệ
+### Tech Stack
 
-- [ReactJs] xây dựng web app
-- [ExpressJs] xây dựng APIs
-- [CrateDB] cơ sở dữ liệu
+- [ReactNative] application
+- [NestJs] APIs build
+- [MongoDB] database
 
 ### Chạy dự án trên local
 

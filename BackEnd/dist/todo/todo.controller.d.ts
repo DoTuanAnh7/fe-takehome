@@ -6,7 +6,9 @@ export declare class TodoController {
     constructor(todoService: TodoService);
     getTask(page?: number, limit?: number): Promise<{
         statusCode: number;
-        data: any;
+        data: (import("mongoose").Document<unknown, {}, import("./schema/task.schema").TaskDocument> & Omit<import("./schema/task.schema").Task & import("mongoose").Document<any, any, any> & {
+            _id: import("mongoose").Types.ObjectId;
+        }, never>)[];
     }>;
     createTask(body: TaskDto): Promise<{
         statusCode: number;

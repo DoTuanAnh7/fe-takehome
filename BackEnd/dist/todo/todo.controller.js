@@ -11,11 +11,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var _a, _b;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TodoController = void 0;
 const common_1 = require("@nestjs/common");
-const mongoose_1 = require("mongoose");
 const ParseObjectIdPipe_pipe_1 = require("../pipe/ParseObjectIdPipe.pipe");
 const task_dto_1 = require("./dto/task.dto");
 const todo_service_1 = require("./todo.service");
@@ -55,14 +53,14 @@ __decorate([
     (0, common_1.Patch)(':id'),
     __param(0, (0, common_1.Param)('id', ParseObjectIdPipe_pipe_1.ParseObjectIdPipe)),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [typeof (_a = typeof mongoose_1.ObjectId !== "undefined" && mongoose_1.ObjectId) === "function" ? _a : Object]),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], TodoController.prototype, "doneTask", null);
 __decorate([
     (0, common_1.Delete)(':id'),
     __param(0, (0, common_1.Param)('id', ParseObjectIdPipe_pipe_1.ParseObjectIdPipe)),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [typeof (_b = typeof mongoose_1.ObjectId !== "undefined" && mongoose_1.ObjectId) === "function" ? _b : Object]),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], TodoController.prototype, "deleteTask", null);
 TodoController = __decorate([
